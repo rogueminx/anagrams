@@ -7,7 +7,12 @@ class AnagramMaker
   end
 
   def anagram_maker()
-    # letter_array = @phrase.split("")
-    # letter_array
+    letter_array1 = @phrase1.split("")
+    letter_array2 = @phrase2.split("")
+    if letter_array1 = letter_array2
+      return "Yes, '" + @phrase1 + "' is an anagram of '" + @phrase2 + "'!"
+    else
+      return false
+    end
   end
 end
