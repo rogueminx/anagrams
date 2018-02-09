@@ -15,12 +15,10 @@ class AnagramMaker
       return "Um, '" + @phrase1 + "' isn't a word, dummy."
     elsif (vowel_check_array - letter_array2) == vowel_check_array
       return "Um, '" + @phrase2 + "' isn't a word, dummy."
-    # if (@phrase1.include?("a"||"e"||"o"||"i"||"u"||"y")) == false
-    #   return "Um, '" + @phrase1 + "' isn't a word, dummy."
-    # elsif (@phrase2.include?("a"||"e"||"o"||"i"||"u"||"y")) == false
-    #   return "Um, '" + @phrase2 + "' isn't a word, dummy."
     elsif (letter_array1 == letter_array2)
       return "Yes, '" + @phrase1 + "' is an anagram of '" + @phrase2 + "'!"
+    elsif ((letter_array1 - letter_array2) == letter_array1)
+      return "That's no anagram, but '" + @phrase1 + "' is an antigram of '" + @phrase2 + "'!"
     else
       return "No, '" + @phrase1 + "' is NOT an anagram of '" + @phrase2 + "'."
     end
