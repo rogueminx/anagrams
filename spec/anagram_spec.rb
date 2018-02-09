@@ -27,4 +27,8 @@ describe ('#anagram_maker') do
     anagram = AnagramMaker.new("noon", "No, No!")
     expect(anagram.anagram_maker()).to(eq("Yes, 'noon' is an anagram of 'No, No!'!"))
   end
+  it ("will inform you of any matching letters in words") do
+    anagram = AnagramMaker.new("cat", "batty")
+    expect(anagram.anagram_maker()).to(eq("The words 'cat' and 'batty', aren't anagrams, but they have these letters in common: a, t."))
+  end
 end
