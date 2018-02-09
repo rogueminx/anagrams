@@ -23,4 +23,8 @@ describe ('#anagram_maker') do
     anagram = AnagramMaker.new("noon", "No No")
     expect(anagram.anagram_maker()).to(eq("Yes, 'noon' is an anagram of 'No No'!"))
   end
+  it ("will ignore punctuation") do
+    anagram = AnagramMaker.new("noon", "No, No!")
+    expect(anagram.anagram_maker()).to(eq("Yes, 'noon' is an anagram of 'No, No!'!"))
+  end
 end
