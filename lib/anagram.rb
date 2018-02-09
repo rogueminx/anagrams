@@ -9,12 +9,16 @@ class AnagramMaker
   def anagram_maker()
     letter_array1 = @phrase1.downcase.split("").sort
     letter_array2 = @phrase2.downcase.split("").sort
-    # vowel_check_array = ["a", "e", "o", "i", "u", "y"]
+    vowel_check_array = ["a", "e", "o", "i", "u", "y"]
     # binding.pry
-    if (@phrase1.include?("a"||"e"||"o"||"i"||"u"||"y")) == false
+    if (vowel_check_array - letter_array1) == vowel_check_array
       return "Um, '" + @phrase1 + "' isn't a word, dummy."
-    elsif (@phrase2.include?("a"||"e"||"o"||"i"||"u"||"y")) == false
+    elsif (vowel_check_array - letter_array2) == vowel_check_array
       return "Um, '" + @phrase2 + "' isn't a word, dummy."
+    # if (@phrase1.include?("a"||"e"||"o"||"i"||"u"||"y")) == false
+    #   return "Um, '" + @phrase1 + "' isn't a word, dummy."
+    # elsif (@phrase2.include?("a"||"e"||"o"||"i"||"u"||"y")) == false
+    #   return "Um, '" + @phrase2 + "' isn't a word, dummy."
     elsif (letter_array1 == letter_array2)
       return "Yes, '" + @phrase1 + "' is an anagram of '" + @phrase2 + "'!"
     else

@@ -12,11 +12,11 @@ describe ('#anagram_maker') do
     expect(anagram.anagram_maker()).to(eq("Yes, 'act' is an anagram of 'CaT'!"))
   end
   it ("will identify false words") do
-    anagram = AnagramMaker.new("act", "ccy")
+    anagram = AnagramMaker.new("act", "cct")
     expect(anagram.anagram_maker()).to(eq("Um, 'cct' isn't a word, dummy."))
   end
-  # it ("will identify an antigram") do
-  #   anagram = AnagramMaker.new("act", "dry")
-  #   expect(anagram.anagram_maker()).to(eq("That's no anagram, but 'act' is an antigram of 'dry'!"))
-  # end
+  it ("will identify an antigram") do
+    anagram = AnagramMaker.new("act", "dry")
+    expect(anagram.anagram_maker()).to(eq("That's no anagram, but 'act' is an antigram of 'dry'!"))
+  end
 end
