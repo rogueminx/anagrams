@@ -7,8 +7,8 @@ class AnagramMaker
   end
 
   def anagram_maker()
-    letter_array1 = @phrase1.downcase.gsub(/[\s]/, '').split("").sort
-    letter_array2 = @phrase2.downcase.gsub(/[\s]/, '').split("").sort
+    letter_array1 = @phrase1.downcase.gsub(/[^a-zA-Zs]/, '').split("").sort
+    letter_array2 = @phrase2.downcase.gsub(/[^a-zA-Z]/, '').split("").sort
     vowel_check_array = ["a", "e", "o", "i", "u", "y"]
     # binding.pry
     if (vowel_check_array - letter_array1) == vowel_check_array
