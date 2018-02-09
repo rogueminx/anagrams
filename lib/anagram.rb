@@ -7,12 +7,13 @@ class AnagramMaker
   end
 
   def anagram_maker()
-    letter_array1 = @phrase1.split("")
-    letter_array2 = @phrase2.split("")
-    if letter_array1 = letter_array2
+    letter_array1 = @phrase1.downcase.split("").sort
+    letter_array2 = @phrase2.downcase.split("").sort
+    # binding.pry
+    if (letter_array1 == letter_array2)
       return "Yes, '" + @phrase1 + "' is an anagram of '" + @phrase2 + "'!"
     else
-      return false
+      return "No, '" + @phrase1 + "' is NOT an anagram of '" + @phrase2 + "'."
     end
   end
 end
