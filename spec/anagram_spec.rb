@@ -19,4 +19,8 @@ describe ('#anagram_maker') do
     anagram = AnagramMaker.new("act", "dry")
     expect(anagram.anagram_maker()).to(eq("That's no anagram, but 'act' is an antigram of 'dry'!"))
   end
+  it ("will ignore spaces") do
+    anagram = AnagramMaker.new("noon", "No No")
+    expect(anagram.anagram_maker()).to(eq("Yes, 'noon' is an anagram of 'No No'!"))
+  end
 end
